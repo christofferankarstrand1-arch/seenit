@@ -29,7 +29,7 @@ const initialState: State = {
   screen: 'onboarding',
   items: {
     'Movies/TV': [
-      { id: 'dune2', title: 'Dune: Part Two', meta: '2024 • Sci‑fi', status: 'seen' },
+      { id: 'dune2', title: 'Dune: Part Two', meta: '2024 • Sci-fi', status: 'seen' },
       { id: 'bear3', title: 'The Bear S3', meta: '2025 • Series', status: 'wishlist' }
     ],
     'YouTube': [{ id: 'v1', title: 'Veritasium: Fusion Breakthrough', meta: 'Video', status: 'seen' }],
