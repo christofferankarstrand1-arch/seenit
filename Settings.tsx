@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSeenIt } from '../contexts/SeenItContext'
+import { useSeenIt, Category } from './SeenItContext'
 
 export default function Settings() {
   const { state, dispatch } = useSeenIt()
