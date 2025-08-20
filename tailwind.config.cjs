@@ -2,11 +2,9 @@
 module.exports = {
   content: [
     './index.html',
-    './index.css',
-    './main.tsx',
     './App.tsx',
     './SeenItApp.tsx',
-    './SeenItContext.tsx',
+    './main.tsx',
     './Nav.tsx',
     './MediaCard.tsx',
     './TipCheck.tsx',
@@ -23,7 +21,10 @@ module.exports = {
         ink: '#1a1a1a',
         paper: '#ffffff',
       },
-      borderRadius: { xl: '1rem', '2xl': '1.5rem' },
+      borderRadius: {
+        xl: '1rem',
+        '2xl': '1.5rem',
+      },
     },
   },
   plugins: [],
