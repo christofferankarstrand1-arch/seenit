@@ -1,30 +1,69 @@
+# 🎬 SeenIt?
 
-# SeenIt? — Full MVP (React + TypeScript + Tailwind)
+**SeenIt?** är en zero-friction webapp för att hålla koll på vilka filmer, serier, YouTube-videos och poddar du sett – och göra det enkelt för vänner och familj att tipsa dig om nytt innehåll utan att riskera att du redan sett det.
 
-A complete MVP for SeenIt? with:
-- Context state (user, theme, items, navigation)
-- Screens: Onboarding, Dashboard, Profile, Settings
-- Categories: Movies/TV, YouTube, Podcasts, Discord
-- Tip-Check (✅/❌) with simple suggestions
-- Light/Dark theme toggle
-- LocalStorage persistence
+🚀 Live demo (Vercel): _kommer efter du deployat_
 
-## Run locally
+---
+
+## ✨ Funktioner
+
+- ✅ Skapa en personlig profil  
+- ✅ Lägg till media (filmer, serier, YouTube, poddar, Discord-tips)  
+- ✅ Markera som *Seen* eller *Wishlist*  
+- ✅ TipCheck – se direkt om din vän redan sett det du tänkt tipsa om  
+- ✅ Light/Dark mode toggle  
+- ✅ Allt sparas i **localStorage** (inga konton krävs i MVP)  
+
+---
+
+## 🛠️ Tech Stack
+
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/) för styling  
+- Context API + LocalStorage för state management  
+- Förberett för **Supabase** (auth & database) och API-integrationer (TMDB, YouTube, ListenNotes)
+
+---
+
+## 🏗️ Kom igång lokalt
+
 ```bash
-npm i
+# Klona repot
+git clone https://github.com/<ditt-användarnamn>/seenit.git
+cd seenit
+
+# Installera dependencies
+npm install
+
+# Starta dev-server
 npm run dev
-```
 
-## Deploy (Vercel)
-- Framework preset: **Vite**
-- Build command: `npm run build`
-- Output directory: `dist`
+☁️ Deploy på Vercel
 
-## Replace branding
-- Put your final SVG in `public/brand/logo.svg`
-- Update OG image at `public/brand/og-default.png`
+Klicka på knappen ovan
 
-## Next steps
-- Supabase auth + DB
-- TMDB/YouTube/ListenNotes integrations
-- Shareable public profiles via slug (e.g. /u/christo)
+Koppla ditt GitHub-konto
+
+Framework preset: Vite
+
+Build command: npm run build
+
+Output directory: dist
+
+🔮 Roadmap
+
+ Riktig autentisering via Supabase
+
+ TMDB-integration för film/serier (autocomplete)
+
+ YouTube- & podcast-API
+
+ Delbara profiler (/u/[username])
+
+ Gamification (badges, streaks, “top tips”)
+
+👨‍🎤 Idé & koncept: Christoffer Ankarstrand
+christoffer.ankarstrand1@gmail.com
+
+💻 MVP utvecklad med AI-stöd (ChatGPT)
