@@ -6,9 +6,15 @@ export default function Nav({ onNavigate }: Props) {
   return (
     <header className="sticky top-0 z-10 backdrop-blur bg-white/70 border-b border-ink/10">
       <div className="mx-auto max-w-5xl px-4 h-14 flex items-center justify-between">
-        <button onClick={()=>onNavigate('dashboard')} className="flex items-center gap-2 font-semibold">
-          <img src="/brand/logo.svg" alt="SeenIt?" className="h-7 w-7" />
-          <span>SeenIt?</span>
+        <button onClick={()=>onNavigate('dashboard')} className="flex items-center gap-3">
+          <img src="/brand/icon.svg" alt="" className="h-6 w-6" />
+          <img
+            src="/brand/wordmark.svg"
+            alt="SeenIt?"
+            className="h-6 hidden sm:block"
+            onError={(e) => { (e.currentTarget.style.display = 'none'); }}
+          />
+          <span className="text-xl font-semibold sm:hidden">SeenIt?</span>
         </button>
         <nav className="flex items-center gap-3">
           <button className="btn btn-ghost" onClick={()=>onNavigate('profile')}>Profile</button>

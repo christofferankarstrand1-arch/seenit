@@ -13,8 +13,15 @@ export default function Onboarding() {
   return (
     <main className="mx-auto max-w-md px-4 py-12 space-y-6">
       <div className="text-center space-y-2">
-        <img src="/brand/logo.svg" className="mx-auto h-16 w-16" />
-        <h1 className="text-3xl font-bold">SeenIt?</h1>
+        <div className="flex justify-center mb-2">
+          <img
+            src="/brand/wordmark.svg"
+            alt="SeenIt?"
+            className="h-12"
+            onError={(e) => { (e.currentTarget.style.display = 'none'); }}
+          />
+        </div>
+        <h1 className="text-3xl font-bold sr-only">SeenIt?</h1>
         <p className="text-ink/70">Check before you recommend.</p>
       </div>
 
