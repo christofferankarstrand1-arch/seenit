@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSeenIt } from '../contexts/SeenItContext'
+import { useSeenIt, Category } from './SeenItContext'
 
 export default function Onboarding() {
   const { state, dispatch } = useSeenIt()
