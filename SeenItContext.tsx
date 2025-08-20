@@ -1,1 +1,1 @@
-export * from './contexts/SeenItContext';
+export * from './contexts/SeenItContext'
