@@ -1,5 +1,5 @@
 import React from 'react'
-import { SeenItProvider, useSeenIt } from './SeenItContext'
+import { SeenItProvider, useSeenIt } from './contexts/SeenItContext'
 import Nav from './Nav'
 import Onboarding from './Onboarding'
 import Dashboard from './Dashboard'

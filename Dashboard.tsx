@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import { useSeenIt, Category } from './SeenItContext'
-import MediaCard from '../components/MediaCard'
-import TipCheck from '../components/TipCheck'
+import { useSeenIt, Category } from './contexts/SeenItContext'
+import MediaCard from './MediaCard'
+import TipCheck from './TipCheck'
 
 function uid() { return Math.random().toString(36).slice(2) }
 

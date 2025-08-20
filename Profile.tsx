@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useSeenIt, Category } from './SeenItContext'
-import MediaCard from '../components/MediaCard'
+import { useSeenIt, Category } from './contexts/SeenItContext'
+import MediaCard from './MediaCard'
 
 export default function Profile() {
   const { state } = useSeenIt()
