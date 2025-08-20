@@ -24,7 +24,12 @@ function RouterView() {
 export default function SeenItApp() {
   return (
     <SeenItProvider>
-      <RouterView />
+      <div>
+        <div className="bg-black text-white text-xs px-2 py-1 text-center">
+          Build: {import.meta.env.VITE_BUILD_TAG}
+        </div>
+        <RouterView />
+      </div>
     </SeenItProvider>
   )
 }

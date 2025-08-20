@@ -25,7 +25,7 @@ export default function Dashboard() {
         const data = await res.json()
         enriched = {
           year: data?.Year,
-          kind: data?.Type,
+          type: data?.Type,
           poster: data?.Poster && data.Poster !== 'N/A' ? data.Poster : undefined,
           rating: data?.imdbRating && data.imdbRating !== 'N/A' ? data.imdbRating : undefined,
           imdbID: data?.imdbID && data.imdbID !== 'N/A' ? data.imdbID : undefined,

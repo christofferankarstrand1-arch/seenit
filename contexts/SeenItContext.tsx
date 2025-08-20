@@ -8,7 +8,7 @@ export type Item = {
   meta?: string;
   status: 'seen' | 'wishlist';
   year?: string;
-  kind?: string;
+  type?: string;
   poster?: string;
   rating?: string;
   imdbID?: string;
