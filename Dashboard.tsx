@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { useSeenIt, Category } from '../contexts/SeenItContext'
+import { useSeenIt, Category } from './SeenItContext'
 import MediaCard from '../components/MediaCard'
 import TipCheck from '../components/TipCheck'
 
