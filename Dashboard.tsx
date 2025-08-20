@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react'
-import { useSeenIt, Category } from './contexts/SeenItContext'
+import React, { useState } from 'react'
+import { useSeenIt, Category, Item } from './contexts/SeenItContext'
 import MediaCard from './MediaCard'
 import TipCheck from './TipCheck'
 
@@ -10,13 +10,33 @@ export default function Dashboard() {
   const [tab, setTab] = useState<Category>('Movies/TV')
   const [newTitle, setNewTitle] = useState('')
   const [newMeta, setNewMeta] = useState('')
+  const [isAdding, setIsAdding] = useState(false)
 
   const items = state.items[tab]
 
-  const add = () => {
+  const add = async () => {
     if (!newTitle.trim()) return
-    dispatch({ type: 'ADD_ITEM', payload: { category: tab, item: { id: uid(), title: newTitle.trim(), meta: newMeta || undefined, status: 'wishlist' } } })
-    setNewTitle(''); setNewMeta('')
+    setIsAdding(true)
+    try {
+      const base: Item = { id: uid(), title: newTitle.trim(), meta: newMeta || undefined, status: 'wishlist' }
+      let enriched: Partial<Item> = {}
+      try {
+        const res = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(newTitle.trim())}&apikey=${import.meta.env.VITE_OMDB_KEY}`)
+        const data = await res.json()
+        enriched = {
+          year: data?.Year,
+          kind: data?.Type,
+          poster: data?.Poster && data.Poster !== 'N/A' ? data.Poster : undefined,
+          rating: data?.imdbRating && data.imdbRating !== 'N/A' ? data.imdbRating : undefined,
+          imdbID: data?.imdbID && data.imdbID !== 'N/A' ? data.imdbID : undefined,
+        }
+      } catch {}
+      const item = { ...base, ...enriched }
+      dispatch({ type: 'ADD_ITEM', payload: { category: tab, item } })
+      setNewTitle(''); setNewMeta('')
+    } finally {
+      setIsAdding(false)
+    }
   }
 
   const lookup = (q: string) => {
@@ -48,7 +68,17 @@ export default function Dashboard() {
         <div className="flex flex-col md:flex-row gap-2">
           <input className="input flex-1" value={newTitle} onChange={e=>setNewTitle(e.target.value)} placeholder={`Add to ${tab}...`} />
           <input className="input flex-1" value={newMeta} onChange={e=>setNewMeta(e.target.value)} placeholder="(Optional) year / notes" />
-          <button className="btn btn-primary" onClick={add}>Add</button>
+          <div className="flex items-center">
+            <button
+              className="btn btn-primary"
+              onClick={add}
+              disabled={isAdding}
+              aria-busy={isAdding}
+            >
+              {isAdding ? 'Adding…' : 'Add'}
+            </button>
+            {isAdding && <span className="ml-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent align-[-2px]" />}
+          </div>
         </div>
       </section>
 

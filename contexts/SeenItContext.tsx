@@ -2,7 +2,17 @@
 import React, { createContext, useContext, useEffect, useMemo, useReducer } from 'react'
 
 export type Category = 'Movies/TV' | 'YouTube' | 'Podcasts' | 'Discord'
-export type Item = { id: string; title: string; meta?: string; status: 'seen'|'wishlist' }
+export type Item = {
+  id: string;
+  title: string;
+  meta?: string;
+  status: 'seen' | 'wishlist';
+  year?: string;
+  kind?: string;
+  poster?: string;
+  rating?: string;
+  imdbID?: string;
+}
 export type User = { name: string }
 
 type State = {
