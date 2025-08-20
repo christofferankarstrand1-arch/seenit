@@ -1,10 +1,10 @@
 import React from 'react'
-import { SeenItProvider, useSeenIt } from './SeenItContext'
-import Nav from './components/Nav'
-import Onboarding from './screens/Onboarding'
-import Dashboard from './screens/Dashboard'
-import Profile from './screens/Profile'
-import Settings from './screens/Settings'
+import { SeenItProvider, useSeenIt } from './contexts/SeenItContext'
+import Nav from './Nav'
+import Onboarding from './Onboarding'
+import Dashboard from './Dashboard'
+import Profile from './Profile'
+import Settings from './Settings'
 
 function RouterView() {
   const { state, dispatch } = useSeenIt()
