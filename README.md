@@ -67,3 +67,5 @@ Output directory: dist
 christoffer.ankarstrand1@gmail.com
 
 💻 MVP utvecklad med AI-stöd (ChatGPT)
+
+// trigger redeploy)
